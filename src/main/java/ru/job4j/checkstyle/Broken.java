@@ -6,15 +6,16 @@ public class Broken {
     private String name;
     private static final String NEW_VALUE = "";
 
-    public void method(int a, int b, int c, int d, int e, int f, int g) { }
+    public Broken() {
+    }
 
     public void echo() { }
+
+    public void method(int a, int b, int c, int d, int e, int f, int g) { }
 
     public void media(Object obj) {
         if (obj != null) {
             System.out.println(obj);
         }
     }
-
-    public void broken() { }
 }
