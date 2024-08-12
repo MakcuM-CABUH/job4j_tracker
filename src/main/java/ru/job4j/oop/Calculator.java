@@ -28,7 +28,7 @@ public class Calculator {
         Я вывел сумму результатов всех операций
      */
     public int sumAllOperation(int c) {
-        return (c + x) + (c - x) + (c * x) + (c / x);
+        return this.sum(c) + this.minus(c) + this.multiply(c) + this.divide(c);
     }
 
     public static void main(String[] args) {
