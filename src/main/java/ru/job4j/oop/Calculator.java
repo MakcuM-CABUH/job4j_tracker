@@ -20,15 +20,8 @@ public class Calculator {
         return b / x;
     }
 
-    /*
-    ЗАДАНИЕ: - нестатический метод sumAllOperation(), который принимает число типа int
-        и находит результат суммирования всех операций: sum(), multiply(), minus(), divide()
-        и возвращает результат вычисления всех этих операций.
-    Из этого условия мне не вполне понятно, какое действие должен производить метод sumAllOperation...
-        Я вывел сумму результатов всех операций
-     */
     public int sumAllOperation(int c) {
-        return this.sum(c) + this.minus(c) + this.multiply(c) + this.divide(c);
+        return sum(c) + minus(c) + multiply(c) + divide(c);
     }
 
     public static void main(String[] args) {
