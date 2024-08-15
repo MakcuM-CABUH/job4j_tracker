@@ -19,7 +19,7 @@ public class Triangle {
     }
 
     public boolean exist(double ap, double bp, double cp) {
-        return ((ap + bp) > cp && (ap + cp) > bp && (cp + bp) > ap) ? true : false;
+        return (ap + bp) > cp && (ap + cp) > bp && (cp + bp) > ap;
     }
 
     public double area() {
