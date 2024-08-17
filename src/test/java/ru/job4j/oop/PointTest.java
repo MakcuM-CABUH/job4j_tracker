@@ -42,4 +42,22 @@ class PointTest {
         double rsl = a.distance(b);
         assertThat(rsl).isEqualTo(expected, withPrecision(0.01));
     }
+
+    @Test
+    void when000To133Then4dot35() {
+        double expected = 4.35;
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(1, 3, 3);
+        double rsl = a.distance3d(b);
+        assertThat(rsl).isEqualTo(expected, withPrecision(0.01));
+    }
+
+    @Test
+    void when021To033Then2dot23() {
+        double expected = 2.23;
+        Point a = new Point(0, 2, 1);
+        Point b = new Point(0, 3, 3);
+        double rsl = a.distance3d(b);
+        assertThat(rsl).isEqualTo(expected, withPrecision(0.01));
+    }
 }
