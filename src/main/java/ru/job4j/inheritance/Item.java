@@ -1,7 +1,6 @@
 package ru.job4j.inheritance;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Item {
     private int id;
@@ -39,10 +38,5 @@ public class Item {
 
     public LocalDateTime getCreated() {
         return created;
-    }
-
-    public String getFormattedCreatedDate() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
-        return created.format(formatter);
     }
 }
