@@ -11,7 +11,7 @@ public class College {
         student.setDateOfReceipt("24 sept 2023");
 
         System.out.println(" student: " + student.getFullName()
-                + " \n training group: " + student.getGroup()
-                + " \n date of receipt: " + student.getDateOfReceipt());
+                + System.lineSeparator() + " training group: " + student.getGroup()
+                + System.lineSeparator() + " date of receipt: " + student.getDateOfReceipt());
     }
 }
