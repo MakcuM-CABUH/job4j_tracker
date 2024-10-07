@@ -20,10 +20,8 @@ public class Shop {
 
     public static int indexOfNull(Product[] products) {
 
-        int i;
-        for (i = 0; i < products.length; i++) {
-            Product product = products[i];
-            if (product == null) {
+        for (int i = 0; i < products.length; i++) {
+            if (products[i] == null) {
                 return i;
             }
         }
