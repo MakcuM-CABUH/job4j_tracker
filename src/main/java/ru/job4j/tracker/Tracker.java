@@ -24,16 +24,7 @@ public class Tracker {
      * Итерируется по массиву items и добавляет ненулевые заявки в result.
      */
     public Item[] findAll() {
-        Item[] result = new Item[size];
-        int size = 0;
-        for (int index = 0; index < this.size; index++) {
-            Item item = this.items[index];
-            if (item != null) {
-                result[size] = item;
-                size++;
-            }
-        }
-        return Arrays.copyOf(result, size);
+        return Arrays.copyOf(items, size);
     }
 
     /**
