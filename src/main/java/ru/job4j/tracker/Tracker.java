@@ -87,4 +87,29 @@ public class Tracker {
         }
         return false;
     }
+
+    /**
+     * проверяем "входящие" данные на соответствие параметрам массива...
+     * удаляем нужную ячейку - сдвигаем оставшуюся часть массива влево...
+     * модель:  System.arraycopy(source, startPos, dist, distPos, length);
+     * source - массив ОТКУДА копируем элементы      (у нас "items")
+     * startPos - стартовая позиция копирования      (у нас "index + 1")
+     * dist - массив, КУДА вставить скопированные элементы (можно в тот же массив)
+     * (у нас "items" - тот же массив, но можно и другой)
+     * distPos - начиная с какого элемента вставлять скопированные ячейки.
+     * (у нас "index")
+     * length - сколько элементов КОПИРУЕМ начиная от startPos
+     * (у нас "items.length - 1 - index")
+     */
+    public void delete(int id) {
+        int index = indexOf(id);
+        if (index == -1) {
+            return;
+        }
+        if (items[index].getId() == id) {
+            System.arraycopy(items, index + 1, items, index, size - 1 - index);
+            items[size - 1] = null;
+            size--;
+        }
+    }
 }
