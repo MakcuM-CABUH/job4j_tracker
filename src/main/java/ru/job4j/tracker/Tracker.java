@@ -90,6 +90,7 @@ public class Tracker {
 
     /**
      * проверяем "входящие" данные на соответствие параметрам массива...
+     * -> действия с массивом производим только если "входящие" данные валидны
      * удаляем нужную ячейку - сдвигаем оставшуюся часть массива влево...
      * модель:  System.arraycopy(source, startPos, dist, distPos, length);
      * source - массив ОТКУДА копируем элементы      (у нас "items")
@@ -103,13 +104,12 @@ public class Tracker {
      */
     public void delete(int id) {
         int index = indexOf(id);
-        if (index == -1) {
-            return;
-        }
-        if (items[index].getId() == id) {
-            System.arraycopy(items, index + 1, items, index, size - 1 - index);
-            items[size - 1] = null;
-            size--;
+        if (index != -1) {
+            if (items[index].getId() == id) {
+                System.arraycopy(items, index + 1, items, index, size - 1 - index);
+                items[size - 1] = null;
+                size--;
+            }
         }
     }
 }
