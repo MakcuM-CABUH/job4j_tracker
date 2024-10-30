@@ -73,19 +73,20 @@ public class Tracker {
 
     /**
      * Заменяет заявку с заданным идентификатором на новую заявку.
+     * Сначала производим валидацию входящих параметров (корректный index). Если верно, то...
      * 1. Найти индекс ячейки по id.
      * 2. Проставить id с item. При замене нужно сохранять старый id.
      * 3. Записать в ячейку с найденным индексом объект item. Это входящий параметр.
-     * 4. Вернуть true, если замена произведена или false, если index по id не найден.
+     * 4. Возвращаем result (он у нас априори true).
      */
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        if (index != -1) {
+        boolean result = index != -1;
+        if (result) {
             item.setId(id);
             items[index] = item;
-            return true;
         }
-        return false;
+        return result;
     }
 
     /**
@@ -104,12 +105,11 @@ public class Tracker {
      */
     public void delete(int id) {
         int index = indexOf(id);
-        if (index != -1) {
-            if (items[index].getId() == id) {
+        boolean result = index != -1 && items[index].getId() == id;
+        if (result) {
                 System.arraycopy(items, index + 1, items, index, size - 1 - index);
                 items[size - 1] = null;
                 size--;
-            }
         }
     }
 }
