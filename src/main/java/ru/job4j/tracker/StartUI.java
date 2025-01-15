@@ -1,14 +1,37 @@
 package ru.job4j.tracker;
 
-/**
- * Cоздайте 1 объект класса Item,
- * выведите созданный объект в консоль.
- * Проверьте, что вывод даты созданной заявки в отличие от задачи 8. Date. Отображение даты не изменился.
- */
+import java.util.Scanner;
+
 public class StartUI {
+    public void init(Scanner scanner, Tracker tracker) {
+        boolean run = true;
+        while (run) {
+            showMenu();
+            System.out.println("Выберите номер пункта в меню.");
+            int select = Integer.parseInt(scanner.nextLine());
+            if (select != 6) {
+                System.out.println("Выбран пункт меню " + select);
+            } else {
+                run = false;
+            }
+        }
+    }
+
+    private void showMenu() {
+        String[] menu = {
+                "Добавить новую заявку", "Показать все заявки", "Изменить заявку",
+                "Удалить заявку", "Показать заявку по id", "Показать заявки по имени",
+                "Завершить программу"
+        };
+        System.out.println("Меню:");
+        for (int i = 0; i < menu.length; i++) {
+            System.out.println(i + ". " + menu[i]);
+        }
+    }
 
     public static void main(String[] args) {
-        Item object1 = new Item(1, "object1");
-        System.out.println(object1);
+        Scanner scanner = new Scanner(System.in);
+        Tracker tracker = new Tracker();
+        new StartUI().init(scanner, tracker);
     }
 }
