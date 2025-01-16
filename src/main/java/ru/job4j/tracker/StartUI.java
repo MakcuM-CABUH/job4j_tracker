@@ -7,11 +7,17 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.print("Выберите номер пункта в меню.");
+            System.out.print("Выберите номер пункта в меню. ");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select != 6) {
-                System.out.println("Выбран пункт меню " + select);
-            } else {
+
+            if (select == 0) {
+                System.out.println("=== Создание новой заявки ===");
+                System.out.print("Введите имя: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                tracker.add(item);
+                System.out.println("Добавленная заявка: " + item);
+            } else if (select != 6) {
                 run = false;
             }
         }
