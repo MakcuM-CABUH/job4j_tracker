@@ -8,12 +8,12 @@ public class Bus implements Transport {
 
     @Override
     public void passengers(int count) {
-        System.out.println("Пассажирских мест: 22 сидячих + 33 стоячих");
+        System.out.println("Пассажирских мест: " + count);
     }
 
     @Override
     public int refuel(int fuel) {
-        int i = 4000;
-        return i;
+        fuel = 4000;
+        return fuel;
     }
 }
