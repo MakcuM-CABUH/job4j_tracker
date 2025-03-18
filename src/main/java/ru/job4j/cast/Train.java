@@ -11,4 +11,3 @@ public class Train implements Vehicle {
         System.out.println("Поезд: Перевозит тысячи пассажиров. Поездка комфортная, но медленная");
     }
 }
-

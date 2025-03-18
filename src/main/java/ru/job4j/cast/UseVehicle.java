@@ -1,6 +1,6 @@
 package ru.job4j.cast;
 
-public class useVehicle {
+public class UseVehicle {
     public static void main(String[] args) {
         Vehicle bus = new Bus();
         Vehicle airplane = new Airplane();
