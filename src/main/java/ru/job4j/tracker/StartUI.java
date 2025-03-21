@@ -2,18 +2,15 @@ package ru.job4j.tracker;
 
 public class StartUI {
     public void init(Input input, Tracker tracker) {
-        String msg = "";
 
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.print("Выберите номер пункта в меню. ");
-            int select = input.askInt(String.valueOf(msg));
+            int select = input.askInt("Выберите номер пункта в меню. ");
 
             if (select == 0) {
                 System.out.println("=== Создание новой заявки ===");
-                System.out.print("Введите имя: ");
-                String name = input.askStr(String.valueOf(msg));
+                String name = input.askStr("Введите имя: ");
                 Item item = new Item(name);
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
@@ -29,10 +26,8 @@ public class StartUI {
                 }
             } else if (select == 2) {
                 System.out.println("===Edit item (Изменение заявки)===");
-                System.out.print("Enter ID: ");
-                int id = input.askInt(String.valueOf(msg));
-                System.out.print("Enter name: ");
-                String name = input.askStr(String.valueOf(msg));
+                int id = input.askInt("Enter ID: ");
+                String name = input.askStr("Enter name: ");
                 Item item = new Item(name);
                 if (tracker.replace(id, item)) {
                     System.out.println("Заявка изменена успешно");
@@ -41,21 +36,18 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("===Delete item (Удаление заявки)===");
-                System.out.print("Enter ID: ");
-                int id = input.askInt(String.valueOf(msg));
+                int id = input.askInt("Enter ID: ");
                 Item item = tracker.findById(id);
                 tracker.delete(id);
                 System.out.println(item != null ? "Заявка удалена успешно." : "Ошибка удаления заявки.");
             } else if (select == 4) {
                 System.out.println("===Поиск заявки по ID)===");
-                System.out.print("Enter ID: ");
-                int id = input.askInt(String.valueOf(msg));
+                int id = input.askInt("Enter ID: ");
                 Item item = tracker.findById(id);
                 System.out.println(item != null ? item : "Ошибка поиска заявки.");
             } else if (select == 5) {
                 System.out.println("===Поиск заявки по имени)===");
-                System.out.print("Enter NAME: ");
-                String name = input.askStr(String.valueOf(msg));
+                String name = input.askStr("Enter NAME: ");
                 Item[] items = tracker.findByName(name);
                 if (items.length > 0) {
                     for (Item item : items) {
