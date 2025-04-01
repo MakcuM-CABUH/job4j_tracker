@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 public class StartUI {
-    public static void creatItem(Input input, Tracker tracker) {
+    public static void createItem(Input input, Tracker tracker) {
         System.out.println("===Creat a new item===");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
@@ -17,7 +17,7 @@ public class StartUI {
             int select = input.askInt("Выберите номер пункта в меню. ");
 
             if (select == 0) {
-                StartUI.creatItem(input, tracker);
+                StartUI.createItem(input, tracker);
             } else if (select == 1) {
                 findAllItems(tracker);
             } else if (select == 2) {
@@ -102,6 +102,6 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         new StartUI().init(input, tracker);
-        StartUI.creatItem(input, tracker);
+        StartUI.createItem(input, tracker);
     }
 }
