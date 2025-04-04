@@ -5,3 +5,6 @@ public interface Input {
 
     int askInt(String question);
 }
+/**
+ * формальная правка
+ */
