@@ -7,7 +7,7 @@ public class ReplaceAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+        public boolean execute(Input input, Tracker tracker) {
         int id = input.askInt("Enter ID: ");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
