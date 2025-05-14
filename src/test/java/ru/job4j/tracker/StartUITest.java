@@ -52,4 +52,99 @@ class StartUITest {
         new StartUI(output).init(input, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
+
+    @Test
+    void whenReplaceItemTestOutputIsSuccessfully() {
+        Output output = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test1"));
+        String replaceName = "New Test Name";
+        Input input = new MockInput(
+                new String[]{"0", String.valueOf(one.getId()), replaceName, "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new ReplaceAction(output),
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "===Изменение заявки===" + ln
+                        + "Заявка изменена успешно" + ln
+                        + "===Завершить программу===" + ln
+                        + "Завершение программы" + ln
+        );
+    }
+
+    @Test
+    void whenFindAllItemTestOutputIsSuccessfully() {
+        Output output = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test1"));
+        Item two = tracker.add(new Item("test2"));
+        Item three = tracker.add(new Item("test3"));
+        Input input = new MockInput(
+                new String[]{"0", String.valueOf(one.getId()), "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new FindAllAction(output),
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "===Вывод всех заявок===" + ln
+                        + one + ln
+                        + two + ln
+                        + three + ln
+                        + "===Завершить программу===" + ln
+                        + "Завершение программы" + ln
+        );
+    }
+
+    @Test
+    void whenFindByNameItemTestOutputIsSuccessfully() {
+        Output output = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test1"));
+
+        Input input = new MockInput(
+                new String[]{"0", String.valueOf(one.getName()), "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new FindByNameAction(output),
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "===Поиск заявки по имени===" + ln
+                        + one + ln
+                        + "===Завершить программу===" + ln
+                        + "Завершение программы" + ln
+        );
+    }
+
+    @Test
+    void whenFindByIdItemTestOutputIsSuccessfully() {
+        Output output = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test1"));
+
+        Input input = new MockInput(
+                new String[]{"0", String.valueOf(one.getId()), "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new FindByIdAction(output),
+                new ExitAction(output)
+        };
+        new StartUI(output).init(input, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "===Поиск заявки по ID===" + ln
+                        + one + ln
+                        + "===Завершить программу===" + ln
+                        + "Завершение программы" + ln
+        );
+    }
 }
