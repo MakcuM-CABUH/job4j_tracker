@@ -14,11 +14,6 @@ public class User {
     }
 
     public boolean isValid() {
-        String user = getUserName();
-        int i = user.length();
-        if (i < 4) {
-            return false;
-        }
         return valid;
     }
 }

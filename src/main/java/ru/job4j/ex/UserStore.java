@@ -7,17 +7,18 @@ public class UserStore {
             if (user.getUserName().equals(login)) {
                 return user;
             }
-            throw new UserNotFoundException("User not found");
         }
-        return null;
+        throw new UserNotFoundException("User not found");
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-
-        if (user.isValid()) {
-            return true;
+        if (!user.isValid()) {
+            throw new UserInvalidException("User is not valid");
         }
-        throw new UserInvalidException("Username cannot be less than 4 characters");
+        if (user.getUserName().length() < 3) {
+            throw new UserInvalidException("Username cannot be less than 3 characters");
+        }
+        return true;
     }
 
     public static void main(String[] args) throws UserNotFoundException {
