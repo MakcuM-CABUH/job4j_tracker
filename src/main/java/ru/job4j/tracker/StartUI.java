@@ -22,7 +22,7 @@ public class StartUI {
 
             int select = input.askInt("Выберите номер пункта в меню. ");
             if (select < 0 || select >= actions.length) {
-                output.println("Неверный ввод. Выберете значение от 0 до " + (actions.length - 1));
+                output.println("Неверный ввод. Выберите значение от 0 до " + (actions.length - 1));
                 continue;
             }
             UserAction action = actions[select];
