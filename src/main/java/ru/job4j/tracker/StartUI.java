@@ -6,6 +6,7 @@ import ru.job4j.tracker.input.Input;
 import ru.job4j.tracker.input.ValidateInput;
 import ru.job4j.tracker.output.ConsoleOutput;
 import ru.job4j.tracker.output.Output;
+import ru.job4j.tracker.output.StubOutput;
 
 public class StartUI {
     private final Output output;
@@ -31,9 +32,9 @@ public class StartUI {
     }
 
     private void showMenu(UserAction[] actions) {
-        System.out.println("Меню: ");
+        output.println("Меню: ");
         for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + ". " + actions[index].name());
+            output.println(index + ". " + actions[index].name());
         }
     }
 

@@ -19,7 +19,11 @@ class StartUITest {
         new StartUI(output).init(input, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
-                "Неверный ввод. Выберите значение от 0 до 0" + ln
+                "Меню: " + ln
+                        + "0. ===Завершить программу===" + ln
+                        + "Неверный ввод. Выберите значение от 0 до 0" + ln
+                        + "Меню: " + ln
+                        + "0. ===Завершить программу===" + ln
                         + "===Завершить программу===" + ln
                         + "Завершение программы" + ln
         );
@@ -69,8 +73,14 @@ class StartUITest {
         new StartUI(output).init(input, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
-                "===Изменение заявки===" + ln
+                "Меню: " + ln
+                        + "0. ===Изменение заявки===" + ln
+                        + "1. ===Завершить программу===" + ln
+                        + "===Изменение заявки===" + ln
                         + "Заявка изменена успешно" + ln
+                        + "Меню: " + ln
+                        + "0. ===Изменение заявки===" + ln
+                        + "1. ===Завершить программу===" + ln
                         + "===Завершить программу===" + ln
                         + "Завершение программы" + ln);
     }
@@ -87,10 +97,16 @@ class StartUITest {
         new StartUI(output).init(input, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
-                "===Вывод всех заявок===" + ln
+                "Меню: " + ln
+                        + "0. ===Вывод всех заявок===" + ln
+                        + "1. ===Завершить программу===" + ln
+                        + "===Вывод всех заявок===" + ln
                         + one + ln
                         + two + ln
                         + three + ln
+                        + "Меню: " + ln
+                        + "0. ===Вывод всех заявок===" + ln
+                        + "1. ===Завершить программу===" + ln
                         + "===Завершить программу===" + ln
                         + "Завершение программы" + ln);
     }
@@ -106,8 +122,14 @@ class StartUITest {
         new StartUI(output).init(input, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
-                "===Поиск заявки по имени===" + ln
+                "Меню: " + ln
+                        + "0. ===Поиск заявки по имени===" + ln
+                        + "1. ===Завершить программу===" + ln
+                        + "===Поиск заявки по имени===" + ln
                         + one + ln
+                        + "Меню: " + ln
+                        + "0. ===Поиск заявки по имени===" + ln
+                        + "1. ===Завершить программу===" + ln
                         + "===Завершить программу===" + ln
                         + "Завершение программы" + ln);
     }
@@ -123,8 +145,14 @@ class StartUITest {
         new StartUI(output).init(input, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
-                "===Поиск заявки по ID===" + ln
+                "Меню: " + ln
+                        + "0. ===Поиск заявки по ID===" + ln
+                        + "1. ===Завершить программу===" + ln
+                        + "===Поиск заявки по ID===" + ln
                         + one + ln
+                        + "Меню: " + ln
+                        + "0. ===Поиск заявки по ID===" + ln
+                        + "1. ===Завершить программу===" + ln
                         + "===Завершить программу===" + ln
                         + "Завершение программы" + ln);
     }
