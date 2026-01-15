@@ -90,12 +90,12 @@ public class Tracker {
     }
 
     /**
-     * проверяем "входящие" данные на соответствие параметрам массива...
+     * Проверяем "входящие" данные на соответствие параметрам массива...
      * -> действия с массивом производим только если "входящие" данные валидны
      * удаляем нужную ячейку - сдвигаем оставшуюся часть массива влево...
-     * модель:  System.arraycopy(source, startPos, dist, distPos, length);
-     * source - массив ОТКУДА копируем элементы      (у нас "items")
-     * startPos - стартовая позиция копирования      (у нас "index + 1")
+     * Модель: System.arraycopy(source, startPos, dist, distPos, length);
+     * source - массив ОТКУДА копируем элементы (у нас "items")
+     * startPos - стартовая позиция копирования (у нас "index + 1")
      * dist - массив, КУДА вставить скопированные элементы (можно в тот же массив)
      * (у нас "items" - тот же массив, но можно и другой)
      * distPos - начиная с какого элемента вставлять скопированные ячейки.
@@ -107,9 +107,9 @@ public class Tracker {
         int index = indexOf(id);
         boolean result = index != -1;
         if (result) {
-                System.arraycopy(items, index + 1, items, index, size - 1 - index);
-                items[size - 1] = null;
-                size--;
+            System.arraycopy(items, index + 1, items, index, size - 1 - index);
+            items[size - 1] = null;
+            size--;
         }
     }
 }
