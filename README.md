@@ -3,6 +3,7 @@
 ## О проекте
 
 ![CI GitHubAction](https://github.com/peterarsentev/job4j_tracker/actions/workflows/maven.yml/badge.svg)
+                   https://github.com/MakcuM-CABUH/games_oop_javafx/
 
 Этот проект - консольное приложение. Пользователю отображается меню с возможностями программы.
 
