@@ -11,11 +11,12 @@ public class PhoneDictionary {
 
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
+        key = key.toLowerCase();
         for (Person person : persons) {
-            if (person.getSurname().toLowerCase().contains(key.toLowerCase())
-                    || person.getName().toLowerCase().contains(key.toLowerCase())
-                    || person.getPhone().toLowerCase().contains(key.toLowerCase())
-                    || person.getAddress().toLowerCase().contains(key.toLowerCase())) {
+            if (person.getSurname().toLowerCase().contains(key)
+                    || person.getName().toLowerCase().contains(key)
+                    || person.getPhone().toLowerCase().contains(key)
+                    || person.getAddress().toLowerCase().contains(key)) {
                 result.add(person);
             }
         }
