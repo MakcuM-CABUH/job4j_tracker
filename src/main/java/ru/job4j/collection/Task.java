@@ -13,7 +13,9 @@ public class Task {
         return number;
     }
 
-    // Включите этот метод, если понадобится описание задачи
+    /*
+    метод пока не задействован
+     */
     public String getDescription() {
         return description;
     }
