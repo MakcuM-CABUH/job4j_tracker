@@ -10,6 +10,8 @@ public class UsageMap {
         HashMap<String, String> map = new HashMap<>();
         map.put("parsentev@yandex.ru", "Petr Arsentev");
         map.put("job4j@mail.ru", "MakcuM CABUH");
+        map.put("job4j@mail.ru", "MakcuM CABUH"); // дубль ключа + дубль значения
+        map.put("job4j@mail.ru", "M C"); // дубль ключа
         map.put("tonnagovna@mail.ru", "Tolik Tolik");
 
 /*
