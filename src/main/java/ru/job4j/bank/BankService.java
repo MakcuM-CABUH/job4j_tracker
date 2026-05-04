@@ -14,9 +14,7 @@ public class BankService {
 
     public void deleteUser(String passport) {
         User userToDelete = findByPassport(passport);
-        if (userToDelete != null) {
-            users.remove(userToDelete);
-        }
+        users.remove(new User(passport, ""));
     }
 
     public void addAccount(String passport, Account account) {
