@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -94,5 +96,37 @@ public class TrackerTest {
         tracker.add(item);
         tracker.delete(1000);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Bug");
+    }
+
+    @Test
+    public void whenSortItemsByNameAscendingThenCheckOrder() {
+        List<Item> items = new ArrayList<>();
+        // Заполняем произвольными данными
+        items.add(new Item(0, "Charlie"));
+        items.add(new Item(0, "Alpha"));
+        items.add(new Item(0, "Bravo"));
+        // Ожидаемый результат создается через те же конструкторы
+        List<Item> expected = List.of(
+                new Item(0, "Alpha"),
+                new Item(0, "Bravo"),
+                new Item(0, "Charlie")
+        );
+        Collections.sort(items, new ItemAscByName());
+        assertThat(items).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenSortItemsByNameDescendingThenCheckOrder() {
+        List<Item> items = new ArrayList<>();
+        items.add(new Item(0, "Alpha"));
+        items.add(new Item(0, "Charlie"));
+        items.add(new Item(0, "Bravo"));
+        List<Item> expected = List.of(
+                new Item(0, "Charlie"),
+                new Item(0, "Bravo"),
+                new Item(0, "Alpha")
+        );
+        Collections.sort(items, new ItemDescByName());
+        assertThat(items).isEqualTo(expected);
     }
 }
