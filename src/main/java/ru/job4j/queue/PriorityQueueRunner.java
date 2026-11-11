@@ -17,17 +17,6 @@ public class PriorityQueueRunner {
         System.out.println("Current element: " + stringQueue.poll());
 
         PriorityQueue<Transaction> transactions = new PriorityQueue<>(new TransactionSortDescByAmount());
-//        transactions.offer(new Transaction(1, "number_1", 100));
-//        transactions.offer(new Transaction(2, "number_2", 1000));
-//        transactions.offer(new Transaction(3, "number_3", 85));
-//        transactions.offer(new Transaction(4, "number_4", 550));
-//        printTransactionElements(transactions);
-//        System.out.println("Current element: " + transactions.peek());
-//        System.out.println("Current element: " + transactions.peek());
-//        transactions.poll();
-//        System.out.println("Current element: " + transactions.peek());
-//        transactions.poll();
-//        System.out.println("Current element: " + transactions.peek());
         transactions.offer(new Transaction(1, "number_1", 100));
         transactions.offer(new Transaction(2, "number_2", 1000));
         transactions.offer(new Transaction(3, "number_3", 85));
